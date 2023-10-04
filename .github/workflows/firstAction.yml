@@ -14,16 +14,12 @@ jobs:
   print-details:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
     - name: Print "Hello World" and Pull Request details
-      with:
-        ref: ${{ env.GITHUB_SHA }}
-      
-        run: |
+      run: |
           echo "Hello World"
           echo "Author: ${{ github.event.pull_request.user.login }}"
           echo "Last Commit: ${{ github.event.pull_request.head.sha }}"
           echo "Changes between last commit and default branch:"
           echo "Last commit: $(git show -s --format=%s)";
-          echo -e "Commit diff:\n$( git fetch && git diff origin/main..origin/firstAction )\n";
-        shell: bash
+          echo -e "Commit diff:\n$( git fetch && git diff origin/main..origin/MiguelHIteso-patch-1 )\n";
+      shell: bash
