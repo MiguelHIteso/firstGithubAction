@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Print Pull Request
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+
+jobs:
+  print-details:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Imprimir "Hello World" y Detalles del Pull Request
+        run: |
+          echo "Hello World"
+          echo "Author: ${{ github.event.pull_request.user.login }}"
+          echo "Last Commit: ${{ github.event.pull_request.head.sha }}"
+          echo "Changes between last commit and default branch:"
+          git diff --name-only ${{ github.event.pull_request.base.sha }}..${{ 
