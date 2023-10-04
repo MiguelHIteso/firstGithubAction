@@ -14,7 +14,7 @@ jobs:
   print-details:
     runs-on: ubuntu-latest
     steps:
-      - name: Imprimir "Hello World" y Detalles del Pull Request
+      - name: Print "Hello World" and Pull Request details
         run: |
           echo "Hello World"
           echo "Author: ${{ github.event.pull_request.user.login }}"
