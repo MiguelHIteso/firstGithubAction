@@ -5,8 +5,11 @@ name: Print Pull Request
 # Controls when the workflow will run
 on:
   pull_request:
-  
-   branches:[ main ]
+    types:
+      - opened
+      - synchronize
+    branches:
+      -main
 
 
 jobs:
