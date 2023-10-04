@@ -24,3 +24,4 @@ jobs:
           echo "Changes between last commit and default branch:"
           echo -e "Commit diff:\n$( git fetch && git diff origin/main..origin/firstAction )\n";
           git diff  --no-index --name-only ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}
+        shell: bash
